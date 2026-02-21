@@ -1,9 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rushabh</title>
+  <title>rushabh</title>
+
+  <style>
+    body {
+      background: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      margin: 40px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    .small {
+      font-size: 14px;
+    }
+
+    .spacer {
+      margin-top: 40px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 4px 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>This is version 2.</h1>
+
+  <p>hi.</p>
+
+  <p>
+    <a href="#">about</a><br>
+    <a href="#">projects</a><br>
+    <a href="#">writing</a><br>
+    <a href="#">contact</a>
+  </p>
+
+  <div class="spacer"></div>
+
+  <p>latest things:</p>
+
+  <p>
+    <a href="#">thing 01</a><br>
+    <a href="#">thing 02</a><br>
+    <a href="#">thing 03</a>
+  </p>
+
+  <div class="spacer"></div>
+
+  <button onclick="changeText()">click something</button>
+
+  <p id="mood" class="small"></p>
+
+  <script>
+    const moods = [
+      "you clicked.",
+      "interesting choice.",
+      "this does nothing useful.",
+      "still here?",
+      "okay.",
+      "bye."
+    ];
+
+    function changeText() {
+      const random = moods[Math.floor(Math.random() * moods.length)];
+      document.getElementById("mood").innerText = random;
+    }
+  </script>
+
 </body>
 </html>
