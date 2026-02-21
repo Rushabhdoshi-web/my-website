@@ -16,21 +16,26 @@
     a {
       color: #ffffff;
       text-decoration: underline;
+      cursor: pointer;
     }
 
     a:hover {
       color: #888888;
     }
 
-    .small {
-      font-size: 14px;
-      margin-top: 20px;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-    }
-
     .spacer {
       margin-top: 40px;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .note {
+      white-space: pre-line;
+      margin-top: 10px;
+      opacity: 0.9;
     }
 
     button {
@@ -49,6 +54,13 @@
       color: #000000;
     }
 
+    .small {
+      font-size: 14px;
+      margin-top: 20px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
   </style>
 </head>
 
@@ -56,21 +68,31 @@
 
   <p>hi.</p>
 
+  <!-- Notebook -->
   <p>
-    <a href="#">about</a><br>
-    <a href="#">projects</a><br>
-    <a href="#">writing</a><br>
-    <a href="#">contact</a>
+    <a onclick="toggleNotebook()">Notebook</a>
   </p>
+
+  <div id="notebookSection" class="hidden">
+
+    <p>
+      <a onclick="toggleNote()">21-02-2026</a>
+    </p>
+
+    <div id="noteContent" class="hidden note">
+knock knock
+who are you?
+    </div>
+
+  </div>
 
   <div class="spacer"></div>
 
-  <p>latest things:</p>
-
+  <!-- Main Sections -->
   <p>
-    <a href="#">thing 01</a><br>
-    <a href="#">thing 02</a><br>
-    <a href="#">thing 03</a>
+    <a href="#">about</a><br>
+    <a href="#">projects</a><br>
+    <a href="#">contact</a>
   </p>
 
   <div class="spacer"></div>
@@ -80,6 +102,16 @@
   <p id="mood" class="small"></p>
 
   <script>
+    function toggleNotebook() {
+      const section = document.getElementById("notebookSection");
+      section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
+    }
+
+    function toggleNote() {
+      const note = document.getElementById("noteContent");
+      note.style.display = note.style.display === "none" || note.style.display === "" ? "block" : "none";
+    }
+
     const moods = [
       "you clicked.",
       "interesting choice.",
