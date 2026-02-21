@@ -29,7 +29,7 @@
 
     .hidden {
       display: none;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     .note {
@@ -97,6 +97,18 @@ who are you?
 
   <div class="spacer"></div>
 
+  <!-- Latest Things -->
+  <p>latest things:</p>
+
+  <p>
+    <a href="#">thing 01</a><br>
+    <a href="#">thing 02</a><br>
+    <a href="#">thing 03</a>
+  </p>
+
+  <div class="spacer"></div>
+
+  <!-- Existential Button -->
   <button onclick="changeText()">click something</button>
 
   <p id="mood" class="small"></p>
@@ -104,12 +116,12 @@ who are you?
   <script>
     function toggleNotebook() {
       const section = document.getElementById("notebookSection");
-      section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
+      section.style.display = section.style.display === "block" ? "none" : "block";
     }
 
     function toggleNote() {
       const note = document.getElementById("noteContent");
-      note.style.display = note.style.display === "none" || note.style.display === "" ? "block" : "none";
+      note.style.display = note.style.display === "block" ? "none" : "block";
     }
 
     const moods = [
