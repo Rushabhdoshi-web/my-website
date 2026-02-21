@@ -5,7 +5,8 @@
 
   <style>
     body {
-      background: white;
+      background: #000000;
+      color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
       margin: 40px;
@@ -13,17 +14,19 @@
     }
 
     a {
-      color: blue;
+      color: #ffffff;
       text-decoration: underline;
     }
 
     a:hover {
-      color: red;
+      color: #888888;
     }
 
     .small {
       font-size: 14px;
       margin-top: 20px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
     }
 
     .spacer {
@@ -32,12 +35,20 @@
 
     button {
       margin-top: 20px;
-      padding: 4px 8px;
+      padding: 6px 12px;
       font-size: 14px;
       cursor: pointer;
-      background: white;
-      border: 1px solid black;
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      transition: all 0.3s ease;
     }
+
+    button:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
   </style>
 </head>
 
@@ -70,15 +81,12 @@
 
   <script>
     const moods = [
-      // original playful
       "you clicked.",
       "interesting choice.",
       "this does nothing useful.",
       "still here?",
       "okay.",
       "bye.",
-
-      // dark finalised lines
       "offer your neck to your tiger.",
       "congratulations. nothing has changed.",
       "this button remembers you.",
@@ -94,7 +102,12 @@
 
     function changeText() {
       const random = moods[Math.floor(Math.random() * moods.length)];
-      document.getElementById("mood").innerText = random;
+      const moodElement = document.getElementById("mood");
+      moodElement.style.opacity = 0;
+      setTimeout(() => {
+        moodElement.innerText = random;
+        moodElement.style.opacity = 0.8;
+      }, 150);
     }
   </script>
 
