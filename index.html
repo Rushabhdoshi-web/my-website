@@ -16,7 +16,6 @@
     a {
       color: #ffffff;
       text-decoration: underline;
-      cursor: pointer;
     }
 
     a:hover {
@@ -25,17 +24,6 @@
 
     .spacer {
       margin-top: 40px;
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .note {
-      white-space: pre-line;
-      margin-top: 10px;
-      opacity: 0.9;
     }
 
     button {
@@ -68,23 +56,10 @@
 
   <p>hi.</p>
 
-  <!-- Notebook -->
+  <!-- Notebook Link -->
   <p>
-    <a onclick="toggleNotebook()">Notebook</a>
+    <a href="notebook.html">Notebook</a>
   </p>
-
-  <div id="notebookSection" class="hidden">
-
-    <p>
-      <a onclick="toggleNote()">21-02-2026</a>
-    </p>
-
-    <div id="noteContent" class="hidden note">
-knock knock
-who are you?
-    </div>
-
-  </div>
 
   <div class="spacer"></div>
 
@@ -114,16 +89,6 @@ who are you?
   <p id="mood" class="small"></p>
 
   <script>
-    function toggleNotebook() {
-      const section = document.getElementById("notebookSection");
-      section.style.display = section.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleNote() {
-      const note = document.getElementById("noteContent");
-      note.style.display = note.style.display === "block" ? "none" : "block";
-    }
-
     const moods = [
       "you clicked.",
       "interesting choice.",
